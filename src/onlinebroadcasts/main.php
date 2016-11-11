@@ -12,6 +12,7 @@ class main extends PluginBase
     public $c;
     public function onEnable()
     {
+        @mkdir($this->getDataFolder());
         $this->c = new Config($this->getDataFolder()."config.yml",Config::YAML,[
             "api" => "https://daltontastic.net/broadcasts.txt",
             "time" => 500,
